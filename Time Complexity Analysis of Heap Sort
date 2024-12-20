@@ -1,0 +1,31 @@
+### Time Complexity Analysis of Heap Sort
+
+#### 1. **Heapify**
+- Heapify is a recursive function that ensures the heap property for a subtree.
+- In the worst case, the function traverses the height of the tree.
+- The height of a binary heap with \( n \) elements is \( \log n \).
+- **Time complexity of a single call to `HEAPIFY`**: \( O(\log n) \).
+
+#### 2. **Building the Max Heap**
+- `BUILD_MAX_HEAP` calls `HEAPIFY` for every non-leaf node (approximately \( n / 2 \) nodes).
+- Each `HEAPIFY` operation takes \( O(\log n) \) time.
+- **Total time complexity of `BUILD_MAX_HEAP`**: \( O(n) \), because the work decreases as we move up the tree (nodes closer to the root require more work).
+
+#### 3. **Heap Sort**
+- The main loop in `HEAP_SORT` runs \( n - 1 \) times.
+- In each iteration, the `HEAPIFY` function is called, which takes \( O(\log n) \) time.
+- **Total time complexity of the sorting phase**: \( O(n \log n) \).
+
+---
+
+### Overall Time Complexity
+
+| Case         | Time Complexity |
+|--------------|-----------------|
+| **Best**     | \( O(n \log n) \) |
+| **Average**  | \( O(n \log n) \) |
+| **Worst**    | \( O(n \log n) \) |
+
+---
+
+
